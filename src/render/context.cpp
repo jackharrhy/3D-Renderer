@@ -37,7 +37,6 @@ VulkanQueueIndices QueryQueueIndices(VkPhysicalDevice vk_physical_device){
 
 void Context::Initalize(ContextInfo info){
     std::vector<const char*> extension_names;
-    extension_names.emplace_back(VK_KHR_PORTABILITY_ENUMERATION_EXTENSION_NAME);
     extension_names.emplace_back(VK_KHR_GET_PHYSICAL_DEVICE_PROPERTIES_2_EXTENSION_NAME);
     
     unsigned int window_extension_count = 0;
@@ -78,7 +77,6 @@ void Context::Initalize(ContextInfo info){
     VkInstanceCreateInfo instance_create_info{};
     instance_create_info.sType = VK_STRUCTURE_TYPE_INSTANCE_CREATE_INFO;
     instance_create_info.pNext = nullptr;
-    instance_create_info.flags = VK_INSTANCE_CREATE_ENUMERATE_PORTABILITY_BIT_KHR;
     
     instance_create_info.pApplicationInfo = &application_info;
     
@@ -110,7 +108,6 @@ void Context::Initalize(ContextInfo info){
     
     
     std::vector<const char*> device_extension_names{};
-    device_extension_names.emplace_back("VK_KHR_portability_subset");
     device_extension_names.emplace_back(VK_KHR_SWAPCHAIN_EXTENSION_NAME);
     
     uint32_t physical_device_count;

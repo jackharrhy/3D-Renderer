@@ -1,4 +1,5 @@
 #pragma once
+#include <condition_variable>
 
 #include <assimp/Importer.hpp>
 #include <assimp/scene.h>
@@ -26,7 +27,7 @@ render::Mesh<T> GetMesh(const char* filepath){
     
     if(!scene || scene->mFlags & AI_SCENE_FLAGS_INCOMPLETE || !scene->mRootNode){
         //cout << "ERROR::ASSIMP::" << import.GetErrorString() << endl;
-        return;
+        exit(1);
     }
     uint32_t vertex_count = 0;
     uint32_t index_count  = 0;
@@ -94,7 +95,6 @@ render::Mesh<T> GetMesh(const char* filepath){
         }
         mesh_index_offset += mesh->mNumVertices;
     }
-    return render_mesh;
     return render_mesh;
 };
 }

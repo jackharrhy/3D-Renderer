@@ -41,7 +41,7 @@ void Renderpass::Initialize(RenderpassInfo info){
 }
 
 RenderBuffer::RenderBuffer(Swapchain* swapchain) : swapchain_attachment(swapchain) {
-    extent.width  = 1440;
+    extent.width  = 1920;
     extent.height = 1080;
     extent.depth  = 1;
     CreateDepthImageAndView();

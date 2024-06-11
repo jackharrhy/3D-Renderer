@@ -75,7 +75,7 @@ CommandBuffer* CommandManager::RecordAsync(std::function<void(VkCommandBuffer)> 
     });
     wt_record_mutex.unlock();
     wt_record_condition_variable.notify_one();
-p
+
     return command_buffer;
 }
 void CommandManager::RecordAsync(std::function<void(VkCommandBuffer)> record_function, CommandBuffer* command_buffer){

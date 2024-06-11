@@ -3,6 +3,7 @@
 #include <functional>
 #include <mutex>
 #include <thread>
+#include <condition_variable>
 
 #include <atomic>
 #include "thread_pool.h"

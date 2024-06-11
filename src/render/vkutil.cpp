@@ -1,3 +1,4 @@
+#include <cstring>
 #include "vkutil.h"
 
 namespace vkutil{
